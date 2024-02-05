@@ -31,15 +31,12 @@ for i=1:N
         if(dis_mat(sj,i)==0)
             continue % self point
         end
-
-        if(dis_mat(sj,i)>100)
-            break; % too far;
-        end
+ 
 
         if(candi(sj)  )
             p2 = pt(sj,:);
             if(is_connected(funbw,p1,p2))
-                candi(sj) = 0;
+%                 candi(sj) = 0;
                 candi(i) = 0;
                 G(i,sj) = 1;
                 G(sj, i) = 1;
@@ -50,6 +47,10 @@ for i=1:N
 
     fprintf('%d\n',i);
 end
+%%
+assert(hascycles(graph(G))==0)
+bins = conncomp(graph(G));
+numComp = max(bins);
  %% show 
   s = isosurface(bw);
  
