@@ -1,0 +1,333 @@
+%% 
+%% Copyright 2007-2025 Elsevier Ltd
+%% 
+%% This file is part of the 'Elsarticle Bundle'.
+%% ---------------------------------------------
+%% 
+%% It may be distributed under the conditions of the LaTeX Project Public
+%% License, either version 1.3 of this license or (at your option) any
+%% later version.  The latest version of this license is in
+%%    http://www.latex-project.org/lppl.txt
+%% and version 1.3 or later is part of all distributions of LaTeX
+%% version 1999/12/01 or later.
+%% 
+%% The list of all files belonging to the 'Elsarticle Bundle' is
+%% given in the file `manifest.txt'.
+%% 
+%% Template article for Elsevier's document class `elsarticle'
+%% with numbered style bibliographic references
+%% SP 2008/03/01
+%% $Id: elsarticle-template-num.tex 272 2025-01-09 17:36:26Z rishi $
+%%
+\documentclass[preprint,12pt]{elsarticle}
+
+%% Use the option review to obtain double line spacing
+%% \documentclass[authoryear,preprint,review,12pt]{elsarticle}
+
+%% Use the options 1p,twocolumn; 3p; 3p,twocolumn; 5p; or 5p,twocolumn
+%% for a journal layout:
+%% \documentclass[final,1p,times]{elsarticle}
+%% \documentclass[final,1p,times,twocolumn]{elsarticle}
+%% \documentclass[final,3p,times]{elsarticle}
+%% \documentclass[final,3p,times,twocolumn]{elsarticle}
+%% \documentclass[final,5p,times]{elsarticle}
+%% \documentclass[final,5p,times,twocolumn]{elsarticle}
+
+%% For including figures, graphicx.sty has been loaded in
+%% elsarticle.cls. If you prefer to use the old commands
+%% please give \usepackage{epsfig}
+
+%% The amssymb package provides various useful mathematical symbols
+\usepackage{amssymb}
+%% The amsmath package provides various useful equation environments.
+\usepackage{amsmath}
+%% The amsthm package provides extended theorem environments
+%% \usepackage{amsthm}
+
+%% The lineno packages adds line numbers. Start line numbering with
+%% \begin{linenumbers}, end it with \end{linenumbers}. Or switch it on
+%% for the whole article with \linenumbers.
+%% \usepackage{lineno}
+
+\journal{Measurement}
+
+\begin{document}
+
+\begin{frontmatter}
+
+%% Title, authors and addresses
+
+%% use the tnoteref command within \title for footnotes;
+%% use the tnotetext command for theassociated footnote;
+%% use the fnref command within \author or \affiliation for footnotes;
+%% use the fntext command for theassociated footnote;
+%% use the corref command within \author for corresponding author footnotes;
+%% use the cortext command for theassociated footnote;
+%% use the ead command for the email address,
+%% and the form \ead[url] for the home page:
+%% \title{Title\tnoteref{label1}}
+%% \tnotetext[label1]{}
+%% \author{Name\corref{cor1}\fnref{label2}}
+%% \ead{email address}
+%% \ead[url]{home page}
+%% \fntext[label2]{}
+%% \cortext[cor1]{}
+%% \affiliation{organization={},
+%%             addressline={},
+%%             city={},
+%%             postcode={},
+%%             state={},
+%%             country={}}
+%% \fntext[label3]{}
+
+\title{Volumentric Calibration and Compenstation of Video Measurement System by Multiple Plane Projection}
+
+%% use optional labels to link authors explicitly to addresses:
+%% \author[label1,label2]{}
+%% \affiliation[label1]{organization={},
+%%             addressline={},
+%%             city={},
+%%             postcode={},
+%%             state={},
+%%             country={}}
+%%
+%% \affiliation[label2]{organization={},
+%%             addressline={},
+%%             city={},
+%%             postcode={},
+%%             state={},
+%%             country={}}
+
+\author{Ming Han, Yanshuai Tu} %% Author name
+
+%% Author affiliation
+\affiliation{organization={Mathematics Department of Zhejiang Normal University},%Department and Organization
+            addressline={}, 
+            city={},
+            postcode={}, 
+            state={},
+            country={}}
+
+%% Abstract
+\begin{abstract}
+%% Text of abstract
+Video measurement system is a kind of non-contact measurement method, which has been widely used in the field of industrial measurement.
+However, the video measurement system is easily affected by the moving stage error. 
+The calibration and compensation for the video measurement system is of great significance. 
+Instead of using laser interferometer for 3D compensation for the moving stage, which is expensive and reluctent to implement real volumetric calibration,
+we propose a noval and efficient method for precise calibration and compensation of moving stage with only one checkerboard pattern under several positions/poses. 
+We also proofed, with sufficient number of images/poses, the proposed method can achieve a very high accuracy of 3D compensation steadily.
+
+\end{abstract}
+
+%%Graphical abstract
+\begin{graphicalabstract}
+%\includegraphics{grabs}
+\end{graphicalabstract}
+
+%%Research highlights
+\begin{highlights}
+\item Research highlight 1
+\item Research highlight 2
+\end{highlights}
+
+%% Keywords
+\begin{keyword}
+%% keywords here, in the form: keyword \sep keyword
+
+%% PACS codes here, in the form: \PACS code \sep code
+
+%% MSC codes here, in the form: \MSC code \sep code
+%% or \MSC[2008] code \sep code (2000 is the default)
+
+\end{keyword}
+
+\end{frontmatter}
+
+%% Add \usepackage{lineno} before \begin{document} and uncomment 
+%% following line to enable line numbers
+%% \linenumbers
+
+%% main text
+%%
+
+%% Use \section commands to start a section
+\section{Introduction}
+\label{sec1}
+%% Labels are used to cross-reference an item using \ref command.
+Video measurement system (VMS), which use a camera and stages for dimension measurement, has been widely used in the field of industrial measurement. 
+Most of the VMS are equipped with telecentric lens for precise in-field measurement and a moving stage for inter-field measurement for large object. 
+Ideally, the coordiante position of the key element can be obtained by combining the pixel coordinates in the image and the corresponding position of the moving stage. 
+
+However, the stage error is inevitable in the real measurement, especially for the large scale measurement. 
+Typicallly, a VMS system is of 1~50 $\mu m$ microns of error in a A4 paper sized measurement range, before anycompensations. 
+Without any compensations, the stage error is one of the major sources of measurement error. 
+
+
+There has been a lot of research on the calibration and compensation of the VMS, e.g. \cite{}.  Previous works, e.g. \cite{},  decompose the 3D mapping as three 1D mapping from the skewed axis the Cartesian axis one by one to, whitout considering the other two directions during each mapping, and assemble them directly. 
+the stage calibration is typically compensated by the laser interferometer, which uses the principle of laser interference to measure the length of moving.
+The laser interferometer can measure length to very high precision, far better than sub-micron (0.1 $\mu m$), thererefor is widely used for linear calibration. 
+However, the laser interferometer is \textbf{not} the direct and theroetical ideally method for 3D compensation, since it only measures one direction of the stage, at most with pitch, yaw and etc. errors along this direction but not the 3D position.
+Such methods are simple yet not suffcient. A prominant phenomemon is that the measurement error is big in 2D, let alone the 3D measurement. 
+There has been patent \cite{}, works on the 2D mapping from the skewed 2D space to the Cartesian  plane, whitout considering the other one direction.
+On the other hand, there has been a lot of research on the calibration and compensation of the VMS, whit Glass Lines, for one direction compenstation. 
+Unfortunately, this kind of method is not directly applicable to volumetric calibration, since the difficulty of fabricating the glass dots on 3D, whithout interference with the imageing quality and precision, to our best knowledge. 
+
+
+We propose a novel and efficient method for precise calibration with only one planar checkerboard pattern under several positions/poses. 
+Specificlly, we place the checkerboard pattern on the moving stage, and then move the stage to several positions/poses, and then each time we capture a set of corners of the checkerboard pattern. 
+We then extract the skewed 3D coordinates of the checkerboard pattern from the images and linear scale.
+The corners in the checkboard pattern is predefined in the checkerboard coordiantes, but not the ideal coordinates,  and then fit the 3D coordinates to a plane. 
+After suffcient poses/positions, we can get the 3D mapping from the skewed 3D coordinates to the ideal 3D coordinates.
+We prooved that, with sufficient number of images/poses, the proposed method can achieve a very high accuracy of 3D compensation steadily.
+
+
+ 
+\section{Method}
+
+
+
+
+\subsection{Algorithm}
+
+
+
+
+
+
+
+
+ \ref{subsec1}.
+
+%% Use \subsection commands to start a subsection.
+\subsection{Example Subsection}
+\label{subsec1}
+
+Subsection text.
+
+%% Use \subsubsection, \paragraph, \subparagraph commands to 
+%% start 3rd, 4th and 5th level sections.
+%% Refer following link for more details.
+%% https://en.wikibooks.org/wiki/LaTeX/Document_Structure#Sectioning_commands
+
+\subsubsection{Mathematics}
+%% Inline mathematics is tagged between $ symbols.
+This is an example for the symbol $\alpha$ tagged as inline mathematics.
+
+%% Displayed equations can be tagged using various environments. 
+%% Single line equations can be tagged using the equation environment.
+\begin{equation}
+f(x) = (x+a)(x+b)
+\end{equation}
+
+%% Unnumbered equations are tagged using starred versions of the environment.
+%% amsmath package needs to be loaded for the starred version of equation environment.
+\begin{equation*}
+f(x) = (x+a)(x+b)
+\end{equation*}
+
+%% align or eqnarray environments can be used for multi line equations.
+%% & is used to mark alignment points in equations.
+%% \\ is used to end a row in a multiline equation.
+\begin{align}
+ f(x) &= (x+a)(x+b) \\
+      &= x^2 + (a+b)x + ab
+\end{align}
+
+\begin{eqnarray}
+ f(x) &=& (x+a)(x+b) \nonumber\\ %% If equation numbering is not needed for a row use \nonumber.
+      &=& x^2 + (a+b)x + ab
+\end{eqnarray}
+
+%% Unnumbered versions of align and eqnarray
+\begin{align*}
+ f(x) &= (x+a)(x+b) \\
+      &= x^2 + (a+b)x + ab
+\end{align*}
+
+\begin{eqnarray*}
+ f(x)&=& (x+a)(x+b) \\
+     &=& x^2 + (a+b)x + ab
+\end{eqnarray*}
+
+%% Refer following link for more details.
+%% https://en.wikibooks.org/wiki/LaTeX/Mathematics
+%% https://en.wikibooks.org/wiki/LaTeX/Advanced_Mathematics
+
+%% Use a table environment to create tables.
+%% Refer following link for more details.
+%% https://en.wikibooks.org/wiki/LaTeX/Tables
+\begin{table}[t]%% placement specifier
+%% Use tabular environment to tag the tabular data.
+%% https://en.wikibooks.org/wiki/LaTeX/Tables#The_tabular_environment
+\centering%% For centre alignment of tabular.
+\begin{tabular}{l c r}%% Table column specifiers
+%% Tabular cells are separated by &
+  1 & 2 & 3 \\ %% A tabular row ends with \\
+  4 & 5 & 6 \\
+  7 & 8 & 9 \\
+\end{tabular}
+%% Use \caption command for table caption and label.
+\caption{Table Caption}\label{fig1}
+\end{table}
+
+
+%% Use figure environment to create figures
+%% Refer following link for more details.
+%% https://en.wikibooks.org/wiki/LaTeX/Floats,_Figures_and_Captions
+\begin{figure}[t]%% placement specifier
+%% Use \includegraphics command to insert graphic files. Place graphics files in 
+%% working directory.
+\centering%% For centre alignment of image.
+\includegraphics{example-image-a}
+%% Use \caption command for figure caption and label.
+\caption{Figure Caption}\label{fig1}
+%% https://en.wikibooks.org/wiki/LaTeX/Importing_Graphics#Importing_external_graphics
+\end{figure}
+
+
+%% The Appendices part is started with the command \appendix;
+%% appendix sections are then done as normal sections
+\appendix
+\section{Example Appendix Section}
+\label{app1}
+
+Appendix text.
+
+%% For citations use: 
+%%       \cite{<label>} ==> [1]
+
+%%
+Example citation, See \cite{lamport94}.
+
+%% If you have bib database file and want bibtex to generate the
+%% bibitems, please use
+%%
+%%  \bibliographystyle{elsarticle-num} 
+%%  \bibliography{<your bibdatabase>}
+
+%% else use the following coding to input the bibitems directly in the
+%% TeX file.
+
+%% Refer following link for more details about bibliography and citations.
+%% https://en.wikibooks.org/wiki/LaTeX/Bibliography_Management
+
+\begin{thebibliography}{00}
+
+%% For numbered reference style
+%% \bibitem{label}
+%% Text of bibliographic item
+
+\bibitem{lamport94}
+  Leslie Lamport,
+  \textit{\LaTeX: a document preparation system},
+  Addison Wesley, Massachusetts,
+  2nd edition,
+  1994.
+
+\end{thebibliography}
+\end{document}
+
+\endinput
+%%
+%% End of file `elsarticle-template-num.tex'.
