@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.0",
+  "description": "TxtPlotter Configuration Schema for DeepSeek AI Dialog",
+  "config": {
+    "chart": {
+      "type": "line",
+      "title": "Chart Title Here",
+      "x_label": "X Axis Label",
+      "y_label": "Y Axis Label"
+    },
+    "data": {
+      "x_column": 0,
+      "y_column": 1,
+      "filter": {
+        "enabled": false,
+        "range": {
+          "x_min": null,
+          "x_max": null,
+          "y_min": null,
+          "y_max": null
+        }
+      }
+    },
+    "appearance": {
+      "colors": {
+        "background": "#f8f9fa",
+        "grid": "#e9ecef",
+        "axis": "#343a40",
+        "text": "#212529",
+        "primary": "#007bff"
+      },
+      "font": {
+        "title_size": 16,
+        "axis_size": 12,
+        "label_size": 10
+      },
+      "style": {
+        "show_grid": true,
+        "show_legend": true,
+        "line_width": 2,
+        "point_size": 5
+      }
+    }
+  },
+  "available_options": {
+    "chart_types": ["line", "bar", "pie", "scatter", "histogram", "box", "violin", "density", "area"],
+    "color_schemes": ["default", "blue", "red", "green", "purple", "orange"],
+    "font_sizes": [8, 10, 12, 14, 16, 18, 20],
+    "line_widths": [1, 2, 3, 4, 5],
+    "point_sizes": [3, 4, 5, 6, 7, 8]
+  }
+}

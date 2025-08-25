@@ -1,0 +1,6 @@
+# Pie chart data - Categories with values
+25.3
+18.7
+31.2
+14.8
+10.0

@@ -1,0 +1,31 @@
+{
+  "chart": {
+    "type": "line",
+    "title": "Monthly Sales Trend Analysis",
+    "x_label": "Month",
+    "y_label": "Sales (in thousands)"
+  },
+  "data": {
+    "x_column": 0,
+    "y_column": 1
+  },
+  "appearance": {
+    "colors": {
+      "background": "#ffffff",
+      "grid": "#e9ecef",
+      "axis": "#343a40",
+      "text": "#212529",
+      "primary": "#007bff"
+    },
+    "font": {
+      "title_size": 20,
+      "axis_size": 14,
+      "label_size": 12
+    },
+    "style": {
+      "show_grid": true,
+      "line_width": 3,
+      "point_size": 6
+    }
+  }
+}

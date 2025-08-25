@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cmake:*)",
+      "Bash(dir)",
+      "Bash(start txtplotter.exe)",
+      "Bash(txtplotter.exe:*)",
+      "Bash(./txtplotter.exe --help)",
+      "Bash(./txtplotter.exe --file \"../../sample_data.txt\" --type bar)",
+      "Bash(./txtplotter.exe --file \"../../test_stats.txt\" --type violin)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
